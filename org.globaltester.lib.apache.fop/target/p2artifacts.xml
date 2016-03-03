@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='org.globaltester.lib.apache.fop' version='1.0.0'>
+    <properties size='5'>
+      <property name='artifact.size' value='4621079'/>
+      <property name='download.size' value='4621079'/>
+      <property name='maven-groupId' value='org.globaltester'/>
+      <property name='maven-artifactId' value='org.globaltester.lib.apache.fop'/>
+      <property name='maven-version' value='1.0.0'/>
+    </properties>
+  </artifact>
+</artifacts>

@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fop
+Bundle-SymbolicName: org.globaltester.lib.apache.fop
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: lib/fop.jar,
+ lib/serializer.jar,
+ .,
+ lib/xmlgraphics-commons-1.3.1.jar,
+ lib/batik-bridge.jar,
+ lib/batik-util.jar,
+ lib/commons-io-2.4.jar,
+ lib/batik-svg-dom.jar,
+ lib/batik-dom.jar,
+ lib/batik-css-1.7.jar,
+ lib/w3c.jar
+Require-Bundle: org.globaltester.logging.legacy,
+ org.globaltester.lib.apache.xml
+Export-Package: org.apache.fop.apps,
+ org.apache.fop.fo.extensions,
+ org.apache.fop.image.loader.batik,
+ org.globaltester.lib.fop.renderer
+Bundle-Vendor: HJP Consulting GmbH

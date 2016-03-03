@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='org.globaltester.lib.apache.fop.test' version='1.0.0' singleton='false'>
+    <update id='org.globaltester.lib.apache.fop.test' range='[0.0.0,1.0.0)' severity='0'/>
+    <properties size='5'>
+      <property name='org.eclipse.equinox.p2.name' value='Fop Test'/>
+      <property name='org.eclipse.equinox.p2.provider' value='HJP Consulting GmbH'/>
+      <property name='maven-groupId' value='org.globaltester'/>
+      <property name='maven-artifactId' value='org.globaltester.lib.apache.fop.test'/>
+      <property name='maven-version' value='1.0.0'/>
+    </properties>
+    <provides size='3'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='org.globaltester.lib.apache.fop.test' version='1.0.0'/>
+      <provided namespace='osgi.bundle' name='org.globaltester.lib.apache.fop.test' version='1.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='6'>
+      <required namespace='osgi.bundle' name='org.globaltester.junit' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.junit' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.globaltester.lib.apache.fop' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.globaltester.base' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.equinox.registry' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='org.globaltester.lib.apache.fop.test' version='1.0.0'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: org.globaltester.lib.apache.fop.test&#xA;Bundle-Version: 1.0.0&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>
