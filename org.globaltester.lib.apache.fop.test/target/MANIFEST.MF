@@ -1,4 +1,0 @@
-Bundle-Vendor: HJP Consulting GmbH
-Bundle-SymbolicName: org.globaltester.lib.apache.fop.test
-Bundle-Version: 1.0.0
-Bundle-Name: GT Fop Test
