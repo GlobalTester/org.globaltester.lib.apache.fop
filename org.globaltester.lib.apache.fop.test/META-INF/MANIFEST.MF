@@ -10,4 +10,5 @@ Require-Bundle: org.globaltester.junit,
  org.globaltester.lib.apache.fop,
  org.eclipse.core.resources,
  org.globaltester.base,
- org.eclipse.equinox.registry
+ org.eclipse.equinox.registry,
+ org.globaltester.core
