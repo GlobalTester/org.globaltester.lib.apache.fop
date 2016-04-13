@@ -25,7 +25,7 @@ import org.apache.fop.fo.FOElementMapping;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.varia.NullAppender;
-import org.globaltester.logging.logger.GTLogger;
+import org.globaltester.logging.legacy.logger.GTLogger;
 
 
 public class GtFopHelper {
