@@ -84,7 +84,7 @@ public class GTPDFRenderer extends PDFRenderer {
             //First check for a dynamically registered handler
             PDFImageHandler handler = imageHandlerRegistry.getHandler(img);
             if (handler != null) {
-            // TODO #833 Use proper logging mechanism
+            // #833 Use proper logging mechanism
 //                if (log.isDebugEnabled()) {
 //                    log.debug("Using PDFImageHandler: " + handler.getClass().getName());
 //                }
@@ -93,7 +93,7 @@ public class GTPDFRenderer extends PDFRenderer {
                             x, y, posInt.width, posInt.height, foreignAttributes);
                     handler.generateImage(context, img, origin, posInt);
                 } catch (IOException ioe) {
-                	// TODO #833 Use proper logging mechanism
+                	// #833 Use proper logging mechanism
                 	ioe.printStackTrace();
 //                  log.error("I/O error while handling image: " + info, ioe);
                     return;
@@ -104,16 +104,16 @@ public class GTPDFRenderer extends PDFRenderer {
                             + info + " (" + img.getClass().getName() + ")");
             }
         } catch (ImageException ie) {
-        // TODO #833 Use proper logging mechanism
+        // #833 Use proper logging mechanism
         	ie.printStackTrace();
 //            log.error("Error while processing image: "
 //                    + (info != null ? info.toString() : uri), ie);
         } catch (FileNotFoundException fnfe) {
-        // TODO #833 Use proper logging mechanism
+        // #833 Use proper logging mechanism
         	fnfe.printStackTrace();
 //            log.error(fnfe.getMessage());
         } catch (IOException ioe) {
-        // TODO #833 Use proper logging mechanism
+        // #833 Use proper logging mechanism
         	ioe.printStackTrace();
 //            log.error("I/O error while processing image: "
 //                    + (info != null ? info.toString() : uri), ioe);
@@ -123,7 +123,7 @@ public class GTPDFRenderer extends PDFRenderer {
         try {
             this.pdfDoc.output(ostream);
 		} catch (IOException ioe) {
-			// TODO #833 Use proper logging mechanism
+			// #833 Use proper logging mechanism
 			ioe.printStackTrace();
 //			log.error("I/O error while processing image: "
 //					+ (info != null ? info.toString() : uri), ioe);
