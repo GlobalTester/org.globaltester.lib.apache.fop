@@ -9,13 +9,10 @@ import java.io.OutputStream;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamSource;
 
-import org.apache.fop.apps.FOPException;
 import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
@@ -93,20 +90,8 @@ public class GtFopHelper {
 			Result res = new SAXResult(fop.getDefaultHandler());
 			transformer.transform(src, res);
 
-		} catch (FOPException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			GTLogger.getInstance().error(e);
-		} catch (TransformerConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			GTLogger.getInstance().error(e);
-		} catch (TransformerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			GTLogger.getInstance().error(e);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			// log this only
 			e.printStackTrace();
 			GTLogger.getInstance().error(e);
 		} finally {
