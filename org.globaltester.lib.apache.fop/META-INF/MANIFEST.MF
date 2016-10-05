@@ -21,4 +21,4 @@ Export-Package: org.apache.fop.apps,
  org.apache.fop.fo.extensions,
  org.apache.fop.image.loader.batik,
  org.globaltester.lib.fop.renderer
-Bundle-Vendor: HJP Consulting GmbH
+Bundle-Vendor: secunet Security Networks AG
