@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Fop Test
+Bundle-Name: GT Fop Test
 Bundle-SymbolicName: org.globaltester.lib.apache.fop.test
 Bundle-Version: 3.2.1.qualifier
 Bundle-Vendor: secunet Security Networks AG
