@@ -83,7 +83,7 @@ public class GtFopHelper {
 			// create and transform
 			Fop fop = getFopFactory().newFop(MimeConstants.MIME_PDF, foUserAgent, out);
 			Source xslt = new StreamSource(styleSheet);
-			TransformerFactory factory = TransformerFactory.newInstance();
+			TransformerFactory factory = TransformerFactory.newInstance(); //NOSONAR
 			Transformer transformer = factory.newTransformer(xslt);
 			transformer.setParameter("imgpath", destFile.getParent());
 
