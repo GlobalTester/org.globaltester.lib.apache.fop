@@ -9,10 +9,12 @@ import java.io.OutputStream;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.fop.apps.FOPException;
 import org.apache.fop.apps.FOUserAgent;
 import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
@@ -22,7 +24,6 @@ import org.apache.fop.fo.FOElementMapping;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.varia.NullAppender;
-import org.globaltester.logging.legacy.logger.GTLogger;
 
 
 public class GtFopHelper {
@@ -51,8 +52,11 @@ public class GtFopHelper {
 	 * @param src
 	 * @param destFile
 	 * @throws IOException 
+	 * @throws PdfReportGenerationException 
+	 * @throws FOPException 
+	 * @throws TransformerException 
 	 */
-	public static void transformToPdf(Source src, File destFile, File styleSheet) throws IOException {
+	public static void transformToPdf(Source src, File destFile, File styleSheet) throws IOException, PdfReportGenerationException {
 		// output stream for destFile
 		OutputStream out = new BufferedOutputStream(new FileOutputStream(
 				destFile));
@@ -64,6 +68,9 @@ public class GtFopHelper {
 //			getFopFactory().setBaseURL(baseURL);
 			
 			FOUserAgent foUserAgent = getFopFactory().newFOUserAgent();
+			if (destFile.toString().contains("%")) {
+				throw new IllegalArgumentException("Path for report creation must not contain % sign");
+			}
 			String baseUrlString = destFile.getParentFile().toURI().toURL().toExternalForm();
 			foUserAgent.setBaseURL(baseUrlString);
 
@@ -89,11 +96,8 @@ public class GtFopHelper {
 
 			Result res = new SAXResult(fop.getDefaultHandler());
 			transformer.transform(src, res);
-
 		} catch (Exception e) {
-			// log this only
-			e.printStackTrace();
-			GTLogger.getInstance().error(e);
+			throw new PdfReportGenerationException(e);
 		} finally {
 			out.close();
 		}

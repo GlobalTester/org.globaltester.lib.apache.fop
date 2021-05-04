@@ -22,7 +22,7 @@ public class GtFopHelperTest {
 	}
 	
 	@Test
-	public void testTransformToPdf() throws IOException, CoreException{
+	public void testTransformToPdf() throws IOException, CoreException, PdfReportGenerationException{
 		IProject project = JUnitHelper.createEmptyProject("testProject");
 		GtResourceHelper.copyPluginFilesToWorkspaceProject("org.globaltester.base.test", project, "files/fopTestFiles", "input.xml", "test.xsl");
 		Source src = new StreamSource(project.getFile("input.xml").getLocation().toFile());
